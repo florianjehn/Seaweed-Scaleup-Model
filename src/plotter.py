@@ -45,7 +45,7 @@ def plot_satisfaction_results(clusters, percent_need, scenario, location):
             food["mean_daily_harvest"] / food["daily_need"]
         ) * 100
         daily_need_satisfied = food["daily_need_satisfied"].rolling(20).mean()
-        # Convert back to the 30 % of the need
+        # Convert back to the % of the need
         daily_need_satisfied = (daily_need_satisfied / 100) * percent_need
         satisfied_need_df["Cluster " + str(cluster)] = daily_need_satisfied
         satisfied_need_df["Cluster " + str(cluster) + " Mean Harvest Day"] = food[
